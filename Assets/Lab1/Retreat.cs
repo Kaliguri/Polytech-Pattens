@@ -4,19 +4,8 @@ using UnityEngine;
 
 public class Retreat : MonoBehaviour, IMove
 {
-    private GameObject _hero => GameObject.FindWithTag("Hero");
-    public float _speed;
-    public float _distanceForSwap;
-
-    private float distance;
-    public void Move(GameObject hero, float speed)
+    static public void Move(Transform position, GameObject hero, float speed)
     {
-        transform.position = Vector3.MoveTowards(transform.position, hero.transform.position, -speed);
-    }
-
-    void FixedUpdate()
-    {
-        distance = (transform.position - _hero.transform.position).magnitude;
-        if (distance < _distanceForSwap) { Move(_hero, _speed); }
+        position.position = Vector3.MoveTowards(position.position, hero.transform.position, -speed);
     }
 }

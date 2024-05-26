@@ -2,5 +2,5 @@ using UnityEngine;
 
 interface IMove
 {
-    public void Move(GameObject hero, float speed);
+    public static void Move(Transform position, GameObject hero, float speed){}
 }
